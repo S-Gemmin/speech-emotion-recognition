@@ -41,3 +41,6 @@ Thumbs.db
 
 .env
 .env.local
+
+devcontainer/
+.devcontainer/
