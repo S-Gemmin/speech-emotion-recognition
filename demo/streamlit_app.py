@@ -12,7 +12,7 @@ from src.llm import create_llm_client, generate_response
 
 st.set_page_config(
     page_title="Speech Emotion Recognition",
-    page_icon="demo/assets/icon.png",
+    page_icon="assets/icon.png",
 )
 
 @st.cache_resource
