@@ -1,6 +1,5 @@
 from tensorflow.keras.models import Sequential
 from tensorflow.keras import layers 
-
 from src.config import INPUT_SHAPE, LSTM_UNITS_1, LSTM_UNITS_2, NUM_EMOTIONS, ACTIVATION, LOSS, OPTIMIZER, MODEL_PATH
 
 def load_ser_model(): 
