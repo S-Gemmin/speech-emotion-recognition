@@ -1,28 +1,16 @@
-# speech-emotion-recognition
+##### Speech Emotion Recognition
+LSTM-based deep learning model for detecting emotions from speech audio. Trained on 4 major datasets with 90%+ accuracy.
 
+##### Quick Start
+```
+git clone https://github.com/yourusername/speech-emotion-recognition.git
+cd speech-emotion-recognition
 
-speech-emotion-recognition/
-├── README.md                 
-├── requirements.txt         
-├── setup.py                  
-├── .gitignore               
-├── LICENSE
-│
-├── speech-emotion-recognition-90.ipynb  # Original Kaggle notebook              
-│
-├── src/
-│   └── __init__.py
-│   └── model.py         # Model architecture & loading
-│   └── preprocessing.py # Audio feature extraction
-│   └── inference.py     # Prediction pipeline
-│   └── config.py        # Hyperparameters & paths
-│   └── utils.py         # Helper functions
-│
-├── demo/
-│   ├── streamlit_app.py     # Streamlit demo
-│   ├── requirements.txt     # Demo-specific deps
-│   └── assets/              # UI assets
-│
-├── models/
-│   └── README.md            # Model download instructions
-│
+python3 -m venv venv
+source venv/bin/activate
+
+pip install -r requirements.txt
+
+cd demo
+streamlit run streamlit_app.py
+```
