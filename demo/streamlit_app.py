@@ -45,18 +45,18 @@ def main():
     st.title("Speech Emotion Recognition + LLM")
 
     st.markdown(
-        """
-        Combines speech emotion recognition with large language models to create 
-        emotionally intelligent responses. Upload any audio file to analyze
-        vocal emotions and receive context-aware responses. Here are the supported
-        emotions:
-        - Angry
-        - Happy
-        - Sad
-        - Neutral
-        - Fearful
-        - Disgusted
-        """
+    """
+    Combines speech emotion recognition with large language models to create 
+    emotionally intelligent responses. Upload any audio file to analyze
+    vocal emotions and receive context-aware responses. Here are the supported
+    emotions:
+    - Angry
+    - Happy
+    - Sad
+    - Neutral
+    - Fearful
+    - Disgusted
+    """
     )
     
     models = load_models()
@@ -74,12 +74,12 @@ def main():
     st.subheader("Response")
 
     st.code(
-        f"""
-        Emotion: {response['emotion_result']['emotion'] if response['emotion_result'] else 'N/A'}
-        Confidence: {response['emotion_result']['confidence'] if response['emotion_result'] else 0.0}
-        Transcript: {response['transcript'] if response['transcript'] else 'N/A'}
-        AI Response: {response['llm_response'] if response['llm_response'] else 'Please enter/analyze an audio file.'}
-        """, language='json'
+    f"""
+    Emotion: {response['emotion_result']['emotion'] if response['emotion_result'] else 'N/A'}
+    Confidence: {response['emotion_result']['confidence'] if response['emotion_result'] else 0.0}
+    Transcript: {response['transcript'] if response['transcript'] else 'N/A'}
+    AI Response: {response['llm_response'] if response['llm_response'] else 'Please enter/analyze an audio file.'}""", 
+    language='json'
     )
 
 if __name__ == "__main__":
