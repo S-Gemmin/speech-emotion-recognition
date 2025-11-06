@@ -8,4 +8,4 @@ plotly
 openai-whisper
 groq
 python-dotenv
-ffmpeg
+ffmpeg-python
