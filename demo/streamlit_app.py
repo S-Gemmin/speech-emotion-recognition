@@ -149,8 +149,7 @@ def create_model():
     MODEL.add(layers.LSTM(64))
     MODEL.add(layers.Dense(6, activation='softmax'))
             
-    return MODEL
-    ''', language="python"
+    return MODEL''', language="python"
     )
 
     hyperparams = {
