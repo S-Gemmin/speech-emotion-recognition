@@ -142,15 +142,15 @@ def model_info():
 
     st.subheader("Model Architecture")
     st.code(
-        '''
-        def create_model():
-            MODEL = Sequential()
-            MODEL.add(layers.LSTM(64, return_sequences=True, input_shape=((352, 15))))
-            MODEL.add(layers.LSTM(64))
-            MODEL.add(layers.Dense(6, activation='softmax'))
+    '''
+    def create_model():
+        MODEL = Sequential()
+        MODEL.add(layers.LSTM(64, return_sequences=True, input_shape=((352, 15))))
+        MODEL.add(layers.LSTM(64))
+        MODEL.add(layers.Dense(6, activation='softmax'))
             
-            return MODEL
-        '''
+        return MODEL
+    '''
         , language="python"
     )
 
