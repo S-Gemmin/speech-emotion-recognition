@@ -11,10 +11,10 @@ from src.config import SUPPORTED_FORMATS, IDX_TO_EMOTION
 from src.stt import load_stt_model, speech_to_text
 from src.llm import create_llm_client, generate_response
 
-ICON_PATH = "assets/icon.png"
-MFCC_IMAGE_PATH = "assets/mfcc.png"
-ZCR_IMAGE_PATH = "assets/zcr.png"
-RMS_IMAGE_PATH = "assets/rms.png"
+ICON_PATH = "demo/assets/icon.png"
+MFCC_IMAGE_PATH = "demo/assets/mfcc.png"
+ZCR_IMAGE_PATH = "demo/assets/zcr.png"
+RMS_IMAGE_PATH = "demo/assets/rms.png"
 
 st.set_page_config(
     page_title="Speech Emotion Recognition",
@@ -74,37 +74,6 @@ def demo():
 
 def feature_extraction():
     st.title("Feature Extraction")
-
-    import os
-    st.write("### Debug Info:")
-    st.write("Current working directory:", os.getcwd())
-    st.write("Files in current directory:", os.listdir('.'))
-    
-    # Check if assets folder exists and what's in it
-    if os.path.exists('assets'):
-        st.write("Assets folder exists! Contents:", os.listdir('assets'))
-    else:
-        st.error("❌ Assets folder NOT found!")
-        
-    # Check multiple possible paths
-    possible_paths = [
-        'assets/mfcc.png',
-        './assets/mfcc.png',
-        '../assets/mfcc.png',
-        'demo/assets/mfcc.png'
-    ]
-    
-    for path in possible_paths:
-        exists = os.path.exists(path)
-        st.write(f"Path '{path}': {'✅ EXISTS' if exists else '❌ NOT FOUND'}")
-    
-    # Try to load the image with error handling
-    try:
-        st.image("assets/mfcc.png", use_column_width=True)
-    except Exception as e:
-        st.error(f"Image loading failed: {e}")
-        # Fallback: show a placeholder
-        st.info("📊 MFCC visualization placeholder - image file not accessible")
 
     st.markdown(
         """
