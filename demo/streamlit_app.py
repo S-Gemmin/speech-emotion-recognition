@@ -11,9 +11,14 @@ from src.config import SUPPORTED_FORMATS, IDX_TO_EMOTION
 from src.stt import load_stt_model, speech_to_text
 from src.llm import create_llm_client, generate_response
 
+ICON_PATH = "assets/icon.png"
+MFCC_IMAGE_PATH = "assets/mfcc.png"
+ZCR_IMAGE_PATH = "assets/zcr.png"
+RMS_IMAGE_PATH = "assets/rms.png"
+
 st.set_page_config(
     page_title="Speech Emotion Recognition",
-    page_icon="assets/icon.png",
+    page_icon=ICON_PATH,
 )
 
 @st.cache_resource
@@ -94,7 +99,7 @@ def feature_extraction():
     st.latex(r"""
         \text{MFCC}_n = \sum_{k=1}^{K} \log(S_k) \cos\left[ n \left( k - \frac{1}{2} \right) \frac{\pi}{K} \right]
     """)
-    st.image("assets/mfcc.png", use_column_width=True)
+    st.image(MFCC_IMAGE_PATH, use_column_width=True)
 
     st.markdown(
         """
@@ -108,7 +113,7 @@ def feature_extraction():
     st.latex(r"""
         \text{ZCR} = \frac{1}{2N} \sum_{n=0}^{N-1} \left| \text{sgn}(x[n]) - \text{sgn}(x[n-1]) \right|
     """)
-    st.image("assets/zcr.png")
+    st.image(ZCR_IMAGE_PATH)
 
     st.markdown(
         """
@@ -122,7 +127,7 @@ def feature_extraction():
     st.latex(r"""
         \text{RMS} = \sqrt{\frac{1}{N} \sum_{n=0}^{N-1} x[n]^2}
     """)
-    st.image("assets/rms.png")
+    st.image(RMS_IMAGE_PATH)
 
 def model_info():
     st.title("Model Info")
