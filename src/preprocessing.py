@@ -5,8 +5,9 @@ from pydub import AudioSegment
 from src.config import FRAME_LENGTH, HOP_LENGTH, MAX_AUDIO_LENGTH, N_MFCC, SAMPLE_RATE, TOP_DB
 
 def preprocess_audio(path): # 22050 hz
-    y, sr = librosa.load(path, sr=22050)
-    trimmed, _ = librosa.effects.trim(y, top_db=TOP_DB)
+    raw_audio = AudioSegment.from_file(path)
+    samples = np.array(raw_audio.get_array_of_samples(), dtype='float32')
+    trimmed, _ = librosa.effects.trim(samples, top_db=TOP_DB)
 
     if len(trimmed) > MAX_AUDIO_LENGTH:
         return trimmed[:MAX_AUDIO_LENGTH]

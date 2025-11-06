@@ -1,4 +1,4 @@
-import os
+from turtle import st
 from dotenv import load_dotenv
 from groq import Groq
 
@@ -7,7 +7,7 @@ from src.config import LLM_TYPE, MAX_TOKENS, TEMPERATURE
 def create_llm_client():
     try:
         load_dotenv()
-        llm_client = Groq(api_key=os.environ.get('GROQ_API_KEY'))
+        llm_client = Groq(api_key=st.secrets["GROQ_API_KEY"])
         return llm_client
     except Exception as e:
         print(e)
