@@ -21,7 +21,7 @@ def predict_emotion_from_file(path, model):
 
         return {
             'emotion': predicted_emotion,
-            'confidence': confidence,
+            'confidence': round(confidence, 4),
             'all_scores': predictions[0].tolist()
         }
     except Exception as e:

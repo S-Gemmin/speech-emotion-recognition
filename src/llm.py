@@ -27,7 +27,7 @@ def generate_response(transcript, emotion_scores, model):
             max_tokens=MAX_TOKENS,
             temperature=TEMPERATURE,
         )
-        return chat_completion.choices[0].message.content
+        return chat_completion.choices[0].message.content.strip()
     except Exception as e:
         print(e)
         return 'I am down at the moment. Sorry about that!'
