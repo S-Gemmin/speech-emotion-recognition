@@ -1,2 +1,6 @@
 # Speech Emotion Recognition
-LSTM-based deep learning model for detecting emotions from speech audio. Trained on 4 datasets with 90%+ accuracy.
+
+LSTM model for emotion detection from speech (90%+ accuracy).
+
+**Demo:** https://s-gemmin-speech-emotion-recognition-demostreamlit-app-zh3pkp.streamlit.app/  
+**Notebook:** https://www.kaggle.com/code/gemmin/speech-emotion-recognition-90
